@@ -9,11 +9,14 @@ license="Apache-2.0"
 homepage="https://fonts.google.com/specimen/Roboto"
 
 _mono_version=3.001
+_serif_version=1.008
 
 distfiles="https://github.com/googlefonts/roboto-3-classic/releases/download/v${version}/Roboto_v${version}.zip
- https://github.com/googlefonts/RobotoMono/archive/refs/tags/v${_mono_version}.tar.gz"
+ https://github.com/googlefonts/RobotoMono/archive/refs/tags/v${_mono_version}.tar.gz
+ https://github.com/googlefonts/roboto-serif/releases/download/v${_serif_version}/RobotoSerifFonts-v${_serif_version}.zip"
 checksum="1653dbe12f248da8fb0b9920db7b9496cd677ed3981154f6f15285c8bd4e334f
- 677d8513918572700531a3115f721a416557a5c701b150abc4d118a7177c8bdc"
+ 677d8513918572700531a3115f721a416557a5c701b150abc4d118a7177c8bdc
+ 366f437312f40a0039d6719e6493d64828a982ac2734f9618f4c07c8684b6984"
 font_dirs="/usr/share/fonts/roboto"
 provides="font:sans-serif-0_1 font:monospace-0_1"
 
@@ -21,4 +24,5 @@ do_install() {
 	vmkdir usr/share/fonts/roboto
 	vcopy hinted/*.ttf usr/share/fonts/roboto
 	vcopy RobotoMono*/fonts/variable/*.ttf usr/share/fonts/roboto
+	vcopy variable/RobotoSerif*.ttf usr/share/fonts/roboto
 }
