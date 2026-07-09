@@ -1,7 +1,7 @@
 # Template file for 'emacs'
 pkgname=emacs
 version=31.0.90
-revision=1
+revision=2
 build_style=gnu-configure
 configure_args="CC=clang-22
  --with-x-toolkit=athena --with-xaw3d
@@ -21,9 +21,11 @@ configure_args="CC=clang-22
  --with-tree-sitter
  --with-toolkit-scroll-bars
  --with-native-compilation=yes
+ --with-xinput2
 "
 hostmakedepends="clang22 pkg-config automake texinfo tar"
 makedepends="
+ libXi-devel
  libXaw-devel
  libXaw3d-devel
  libgccjit-devel
@@ -56,7 +58,6 @@ changelog="https://www.gnu.org/savannah-checkouts/gnu/emacs/emacs.html#Releases"
 distfiles="https://github.com/emacs-mirror/emacs/archive/refs/tags/emacs-${version}.tar.gz"
 checksum=22631502ef0b55aa9df2b16169bae845db4c260038cb7a09e643ddaae09ddb84
 nocross=yes
-nopie=yes
 
 pre_configure() {
 	./autogen.sh
