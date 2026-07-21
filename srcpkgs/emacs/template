@@ -4,7 +4,7 @@ version=31.1
 revision=1
 create_wrksrc=required
 build_style=gnu-configure
-configure_args="CC=clang-22
+configure_args="
  --with-x-toolkit=athena --with-xaw3d
  --with-xpm --with-jpeg --with-tiff
  --with-gif --with-png --with-rsvg
@@ -18,13 +18,13 @@ configure_args="CC=clang-22
  --with-file-notification=inotify
  --with-gnutls
  --with-xml2
- --with-harfbuzz --with-libotf --with-m17n-flt
+ --with-harfbuzz
  --with-tree-sitter
  --with-toolkit-scroll-bars
  --with-native-compilation=yes
  --with-xinput2
 "
-hostmakedepends="clang22 pkg-config automake texinfo tar"
+hostmakedepends="pkg-config automake texinfo tar"
 makedepends="
  libXi-devel
  libXaw-devel
@@ -44,7 +44,6 @@ makedepends="
  librsvg-devel
  libxml2-devel
  alsa-lib-devel
- m17n-lib-devel
  harfbuzz-devel
  cairo-devel
  gmp-devel
