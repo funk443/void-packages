@@ -1,0 +1,17 @@
+# Template file for 'font-libertinus'
+pkgname=font-libertinus
+version=7.051
+revision=1
+depends="font-util"
+short_desc="Libertinus font family"
+maintainer="CToID <funk443@icloud.com>"
+license="OFL-1.1"
+homepage="https://github.com/alerque/libertinus"
+distfiles="https://github.com/alerque/libertinus/releases/download/v${version}/Libertinus-${version}.tar.zst"
+checksum=250677c929d3775a30913643594379af264ac2ef2801035aa1dcbe30b9be23a6
+
+do_install() {
+	vmkdir usr/share/fonts/OTF/libertinus
+	vcopy "static/OTF/*.otf" usr/share/fonts/OTF/libertinus
+	vlicense OFL.txt
+}
